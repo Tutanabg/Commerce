@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated %}
+                
+          
+    <h1 Style="color: red;"> Bid is closed!!! </h1>
+    <h1 Style="color: green;"> The Winner is <span Style="color: blue;">{{user.username}}</span> and the Winning price is <span Style="color: purple;">$: {{bid.bid}}.</span> </h1>
+    <a href="{% url 'index' %}">Back to Active Lists </a>
+    
+            {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+         
+
