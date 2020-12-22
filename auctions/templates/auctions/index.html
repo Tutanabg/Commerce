@@ -1,1 +1,47 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>Active Listings</h1>
+    {% for list in list %}
+    {{ show.image.url }}
+    {% if list.image %}
+<div>
+  <div class="column">
+    <img src="{{list.image.url}}" height="300" width="300">
+  </div>
+  <div class="column">
+     <a href="{% url 'detail' list.id %}"><h3>Title:{{list.title}}</h3></a>
+    <h3>Description:    {{ list.description }}</h3>
+    <h3>Starting Bid in $:   {{list.starting_bid}}</h3>
+    <h3>Category:   {{list.category}}</h3>
+  </div>
+</div>
+<br></br>
+  {% else %}
+     <div>
+  <div class="column">
+    <h3>Image not available.</h3>
+  </div>
+  <div class="column">
+     <a href="{% url 'detail' list.id %}"><h3>Title:{{list.title}}</h3></a>
+    <h3>Description:   {{ list.description }}</h3>
+    <h3>Starting Bid in $:   {{list.starting_bid}}</h3>
+    <h3>Category:   {{list.category}}</h3>
+  </div>
+</div>
+<br></br>
+    {% endif %}
+   {% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+         
+
 
