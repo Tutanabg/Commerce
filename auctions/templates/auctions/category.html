@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+
+<h1> Category: {{post}}</h1><br></br>
+
+{% for data in data %}    
+      {{ show.image.url }}
+  {% if data.image %}
+<div>
+  <div class="column">
+    <img src="{{data.image.url}}" height="300" width="300">
+  </div>
+  <div class="column">
+     <a href="{% url 'detail' data.id %}"><h3>Title:{{data.title}}</h3></a>
+    <h3>Description:    {{ data.description }}</h3>
+    <h3>Starting Bid in $:   {{data.starting_bid}}</h3>
+    <h3>Category:   {{data.category}}</h3>
+  </div><br></br>
+</div>
+<br></br>
+  {% else %}
+     <div>
+  <div class="column">
+    <h3>Image not available.</h3>
+  </div>
+  <div class="column">
+     <a href="{% url 'detail' data.id %}"><h3>Title:{{data.title}}</h3></a>
+    <h3>Description:   {{ data.description }}</h3>
+    <h3>Starting Bid in $:   {{data.starting_bid}}</h3>
+    <h3>Category:   {{data.category}}</h3>
+  </div>
+</div>
+<br></br>
+ {% endif %}
+   {% endfor %}
+<br></br>
+  <a href="{% url 'cate' %}">Back to Category List</a>
+{% endblock %}
+
+      
+
+
+  
