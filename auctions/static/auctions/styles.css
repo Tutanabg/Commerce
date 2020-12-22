@@ -1,1 +1,37 @@
+body {
+    padding: 10px;
+    background-color: #FFFFE0;
+}
+
+.nav-item{
+font: 15px;}
+
+
+.column {
+     float: left;
+     width: 50%;
+     padding: 100px;
+     height: 300px; 
+     align-content: center;
+     display: grid; 
+     justify-content: center;
+     border: 10px;
+}
+
+input[type=text]{
+  background-color: #E0FFFF;
+  color: red;
+  width: 50%;
+  padding: 12px 20px;
+  marginpadding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+  border-radius: 4px;: 8px 0;
+}
+
+form{
+	font-size: 35px;
+}
+
 
