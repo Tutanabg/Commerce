@@ -1,0 +1,34 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+<h2>Watchlist</h2> 
+ {{ show.image.url }}
+  {% for page in page %}
+    <div>
+    	<a href="{% url 'removewatchlist' page.list_id %}"><button class="btn btn-primary">Remove from watchlist</button></a>
+          <div class="column">
+               {% if page.image %}
+               
+                   <img src="{{ page.image.url }}" height="300" width="300">
+               {% else %}
+               
+                   <h3>Image not available.</h3>
+               {% endif %}
+          </div>
+          <div class="column">
+          	{% if page %}
+              <h3><a href="{% url 'detail' page.list_id %}">Title: {{ page.title }}</a></h3>
+             
+           {% endif %}
+           
+           </div>
+      </div>
+
+{% empty %}
+      <h3>No listings found in your watchlist...</h3>
+
+{% endfor %}
+<br></br>
+  <a href="{% url 'index' %}">Back to Active Lists </a>
+{% endblock %}
