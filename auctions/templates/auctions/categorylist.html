@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1> Categories:</h1>
+<ul>
+     <li><a href="/cate/books"><h3>Books</h3></a></li>
+     <li><a href="/cate/cars"><h3>Cars</h3></a></li>
+     <li><a href="/cate/electronics"><h3>Electronics</h3></a></li>
+     <li><a href="/cate/fashion"><h3>Fashion</h3></a></li>
+     <li><a href="/cate/houses"><h3>Houses</h3></a></li>
+     <li><a href="/cate/toys"><h3>Toys</h3></a></li>
+    </ul>
+
+  <a href="{% url 'index' %}">Back to Active Lists </a>
+{% endblock %}
+
+      
+
+
+  
